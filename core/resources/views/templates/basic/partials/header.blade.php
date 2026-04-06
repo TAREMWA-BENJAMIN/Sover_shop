@@ -27,41 +27,17 @@
                     </span>
                 </li>
 
-                <li>
-                    <a href="{{ route('home') }}">@lang('Home')</a>
+                <li style="display: flex; align-items: center; padding: 0 15px;">
+                    <span style="color: #ffffff; font-weight: 700; font-size: 14px; letter-spacing: 0.5px;">BUY SMARTER, LIVE BETTER</span>
                 </li>
-
-                <li style="display: flex; align-items: center; padding: 0 10px;">
-                    <a href="https://solvertech.co/" target="_blank" style="background: #0046af; padding: 8px 15px; border-radius: 5px; display: flex; align-items: center; line-height: 1;">
-                        <img src="{{ asset('assets/images/logo_icon/sovertech-Logo.png') }}" alt="Solvertech" style="height: 20px;">
-                    </a>
-                </li>
-
-
 
                 @guest
-                    <li>
-                        <a href="{{ route('about') }}">@lang('About')</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('blogs') }}">@lang('Blog')</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('contact') }}">@lang('Contact')</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('user.login') }}">@lang('Login')</a>
+                    <li style="display: flex; align-items: center; margin-left: auto; gap: 5px;">
+                        <a href="{{ route('user.login') }}" style="color: #ffffff; text-decoration: none; background-color: #00b84d; padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">@lang('Sign in')</a>
+                        <span style="color: #ffffff;">|</span>
+                        <a href="{{ route('user.register') }}" style="color: #ffffff; text-decoration: none; background-color: #00b84d; padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">@lang('Registration')</a>
                     </li>
                 @endguest
-
-                @auth
-                    <li>
-                        <a href="{{ route('ticket.open') }}">@lang('Support')</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('user.home') }}">@lang('Dashboard')</a>
-                    </li>
-                @endauth
 
                 <li class="ms-auto search-toggler-btn d-md-block d-none">
                     <div class="search-toggler">

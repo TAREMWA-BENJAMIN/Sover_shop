@@ -2165,6 +2165,30 @@ i {
   }
 }
 
+.footer-logo-section {
+  margin-bottom: 20px;
+}
+
+.footer-solvertech-logo {
+  display: inline-block;
+  background: #0046af;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-solvertech-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.footer-solvertech-logo:hover {
+  background: #0046cf;
+  transform: scale(1.05);
+}
+
 .footer-social {
   text-align: center;
 }

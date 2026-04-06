@@ -56,6 +56,13 @@
 
          <!-- Footer Bottom -->
          <div class="footer-bottom">
+             <!-- Solvertech Logo -->
+             <div class="footer-logo-section">
+                 <a href="https://solvertech.co/" target="_blank" class="footer-solvertech-logo">
+                     <img src="{{ asset('assets/images/logo_icon/sovertech-Logo.png') }}" alt="Solvertech">
+                 </a>
+             </div>
+
              <div class="footer-social">
                  <h4 class="footer-column-title">@lang('Follow Us')</h4>
                  <ul class="social-links footer-social-links">
