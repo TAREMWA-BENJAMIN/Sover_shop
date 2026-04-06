@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Allow: /admin/help.html
+Sitemap: https://solvershop.com/sitemap.xml
