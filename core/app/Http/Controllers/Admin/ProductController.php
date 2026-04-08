@@ -54,6 +54,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->discount    = $request->discount ?? 0;
         $product->featured    = $request->featured ? 1 : 0;
+        $product->status      = $request->status ? Status::ENABLE : Status::DISABLE;
 
         if ($request->hasFile('image')) {
             try {
@@ -105,6 +106,7 @@ class ProductController extends Controller
         $product->discount    = $request->discount ?? 0;
         $product->description = $request->description;
         $product->featured    = $request->featured ? Status::YES : Status::NO;
+        $product->status      = $request->status ? Status::ENABLE : Status::DISABLE;
 
         if ($request->hasFile('image')) {
             try {

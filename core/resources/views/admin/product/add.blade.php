@@ -81,7 +81,14 @@
                                         <input type="number" name="stock" class="form-control" value="{{ old('stock') }}" required>
                                     </div>
 
-                                    <div class="form-group col-xl-12">
+                                    <div class="form-group col-xl-6">
+                                        <label for="status">@lang('Status')</label>
+                                        <input type="checkbox" data-width="100%" data-size="large" data-onstyle="-success" data-offstyle="-danger"
+                                            data-bs-toggle="toggle" data-height="35" data-on="@lang('Enable')" data-off="@lang('Disable')"
+                                            name="status" checked>
+                                    </div>
+
+                                    <div class="form-group col-xl-6">
                                         <label for="featured">@lang('Featured')</label>
                                         <input type="checkbox" data-width="100%" data-size="large" data-onstyle="-success" data-offstyle="-danger"
                                             data-bs-toggle="toggle" data-height="35" data-on="@lang('Enable')" data-off="@lang('Disable')"

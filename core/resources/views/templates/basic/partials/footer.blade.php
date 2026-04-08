@@ -13,7 +13,7 @@
              <div class="footer-column">
                  <h4 class="footer-column-title">@lang('About Us')</h4>
                  <ul class="footer-column-links">
-                     <li><a href="{{ route('about') }}">@lang('About Jiji')</a></li>
+                     <li><a href="{{ route('about') }}">@lang('About Us')</a></li>
                      <li><a href="{{ route('contact') }}">@lang('Contact Us')</a></li>
                      <li><a href="{{ route('faq') }}">@lang('FAQ')</a></li>
                  </ul>
@@ -23,7 +23,7 @@
              <div class="footer-column">
                  <h4 class="footer-column-title">@lang('Support')</h4>
                  <ul class="footer-column-links">
-                     <li><a href="mailto:support@{{ request()->getHost() }}">support@{{ request()->getHost() }}</a></li>
+
                      <li><a href="{{ route('faq') }}">@lang('Safety Tips')</a></li>
                      <li><a href="{{ route('contact') }}">@lang('Contact Us')</a></li>
                  </ul>

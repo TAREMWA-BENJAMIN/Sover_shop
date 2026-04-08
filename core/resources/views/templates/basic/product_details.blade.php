@@ -34,7 +34,43 @@
                     <h6 class="mt-1">@lang('Brand'): {{ __($product->brand->name) }}</h6>
                     <h6 class="mt-1">@lang('Category'): {{ __($product->category->name) }}</h6>
                     <h6 class="mt-1">@lang('SKU'): {{ $product->sku }}</h6>
-                    <p class="mt-3"> @php echo $product->description; @endphp </p>
+                    <div class="product-desc-wrapper mt-3">
+                        <div id="desc-container" style="max-height: 150px; overflow: hidden; position: relative;">
+                            @php echo $product->description; @endphp
+                        </div>
+                        <div id="desc-gradient" style="position: relative; margin-top: -40px; height: 40px; background: linear-gradient(transparent, #ffffff);"></div>
+                        <button id="readMoreBtn" onclick="toggleDescription()" class="btn btn-link text--base p-0" style="text-decoration: none; font-weight: 600; display: none; margin-top: 5px;"><span>@lang('Read More')</span> <i class="las la-angle-down"></i></button>
+                    </div>
+
+                    <script>
+                        function toggleDescription() {
+                            var container = document.getElementById("desc-container");
+                            var btn = document.getElementById("readMoreBtn");
+                            var gradient = document.getElementById("desc-gradient");
+                            
+                            if (container.style.maxHeight === "150px") {
+                                container.style.maxHeight = "none";
+                                btn.innerHTML = '<span>@lang("Show Less")</span> <i class="las la-angle-up"></i>';
+                                if(gradient) gradient.style.display = "none";
+                            } else {
+                                container.style.maxHeight = "150px";
+                                btn.innerHTML = '<span>@lang("Read More")</span> <i class="las la-angle-down"></i>';
+                                if(gradient) gradient.style.display = "block";
+                            }
+                        }
+                        
+                        document.addEventListener("DOMContentLoaded", function() {
+                            var container = document.getElementById("desc-container");
+                            // Add slight buffer to 150px to prevent showing toggle for few pixels
+                            if(container.scrollHeight > 160) {
+                                document.getElementById("readMoreBtn").style.display = "inline-block";
+                            } else {
+                                var gradient = document.getElementById("desc-gradient");
+                                if(gradient) gradient.style.display = "none";
+                            }
+                        });
+                    </script>
+
                     <a href="{{ route('checkout', [$product->id, $product->slug]) }}" class="cmn--btn mt-4 bg--base text--white">@lang('Order Now')</a>
                 </div>
             </div>
