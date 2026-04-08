@@ -2,7 +2,7 @@
 @section('content')
     <section class="product-details-section pb-50 pt-50">
         <div class="row gy-4 gy-sm-5">
-            <div class="col-lg-4 col-md-8 col-sm-10">
+            <div class="col-lg-8 col-md-12">
                 <div class="product-thumb-wrapper">
                     <div class="sync1 owl-carousel owl-theme">
                         <div class="thumbs zoom ex1">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <div class="product-details">
                     <h3 class="title">{{ __($product->name) }}</h3>
                     <h6 class="mt-1">@lang('Brand'): {{ __($product->brand->name) }}</h6>
