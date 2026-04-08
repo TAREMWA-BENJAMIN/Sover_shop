@@ -95,7 +95,9 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="product-item">
                                     <div class="thumb">
-                                        <img src="{{ getImage(getFilePath('product') . '/' . $product->image, getFileSize('product')) }}" alt="products">
+                                        <a href="{{ route('product.details', [$product->id, $product->slug]) }}">
+                                            <img src="{{ getImage(getFilePath('product') . '/' . $product->image, getFileSize('product')) }}" alt="products">
+                                        </a>
                                         @if (!$product->stock)
                                             <span class="stock-status badge bg--danger">@lang('Stock Out')</span>
                                         @endif

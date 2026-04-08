@@ -84,7 +84,9 @@
                 <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6">
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="{{ getImage(getFilePath('product') . '/' . $item->image, getFileSize('product')) }}" alt="products">
+                            <a href="{{ route('product.details', [$item->id, $item->slug]) }}">
+                                <img src="{{ getImage(getFilePath('product') . '/' . $item->image, getFileSize('product')) }}" alt="products">
+                            </a>
                         </div>
                         <div class="content">
                             <h5 class="product-name"><a href="{{ route('product.details', [$item->id, $item->slug]) }}">{{ __($item->name) }}</a></h5>

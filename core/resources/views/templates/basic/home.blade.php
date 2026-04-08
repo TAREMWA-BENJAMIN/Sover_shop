@@ -17,7 +17,9 @@
                             <div class="col-lg-3 col-sm-6 d-flex">
                                 <div class="product-item w-100">
                                     <div class="thumb">
-                                        <img src="{{ getImage(getFilePath('product') . '/' . $item->image, getFileSize('product')) }}" alt="products">
+                                        <a href="{{ route('product.details', [$item->id, $item->slug]) }}">
+                                            <img src="{{ getImage(getFilePath('product') . '/' . $item->image, getFileSize('product')) }}" alt="products">
+                                        </a>
                                         @if (!$item->stock)
                                             <span class="stock-status badge bg--danger">@lang('Stock Out')</span>
                                         @endif
@@ -57,7 +59,9 @@
                             <div class="col-lg-3 col-sm-6 d-flex">
                                 <div class="product-item w-100">
                                     <div class="thumb">
-                                        <img src="{{ getImage(getFilePath('product') . '/' . $product->image, getFileSize('product')) }}" alt="products">
+                                        <a href="{{ route('product.details', [$product->id, $product->slug]) }}">
+                                            <img src="{{ getImage(getFilePath('product') . '/' . $product->image, getFileSize('product')) }}" alt="products">
+                                        </a>
                                         @if (!$product->stock)
                                             <span class="stock-status badge bg--danger">@lang('Stock Out')</span>
                                         @endif
