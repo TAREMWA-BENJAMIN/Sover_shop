@@ -26,7 +26,7 @@ class SiteController extends Controller
             })
             ->whereHas('category', function ($q) {
                 $q->active();
-            })->where('featured', Status::YES)->take(12)->latest()->get();
+            })->where('featured', Status::YES)->latest()->get();
 
         $latestProducts = Product::where('status', Status::ENABLE)
             ->whereHas('brand', function ($q) {
@@ -34,7 +34,7 @@ class SiteController extends Controller
             })
             ->whereHas('category', function ($q) {
                 $q->active();
-            })->latest()->take(6)->latest()->get();
+            })->latest()->get();
 
         $hotDealProducts = Product::where('status', Status::ENABLE)
             ->whereHas('brand', function ($q) {

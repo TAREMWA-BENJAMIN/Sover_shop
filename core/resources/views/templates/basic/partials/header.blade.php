@@ -28,6 +28,10 @@
                     </span>
                 </li>
 
+                <li class="d-none d-md-block" style="padding-left: 15px;">
+                    <a href="{{ route('home') }}" style="color: #ffffff; font-weight: 600; text-decoration: none; font-size: 15px;">@lang('Home')</a>
+                </li>
+
                 <!-- New Inline Search Bar (Desktop) -->
                 <li class="d-none d-md-block"
                     style="flex: 0 0 auto; width: 450px; max-width: 40%; margin-right: auto; padding-left: 20px;">
@@ -51,10 +55,10 @@
                 @guest
                     <li style="display: flex; align-items: center; margin-left: auto; gap: 5px;">
                         <a href="{{ route('user.login') }}"
-                            style="color: #ffffff; text-decoration: none; background-color: #00b84d; padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">@lang('Sign in')</a>
+                            style="color: #ffffff; text-decoration: none; background-color: #0d47a1; padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">@lang('Sign in')</a>
                         <span style="color: #ffffff;">|</span>
                         <a href="{{ route('user.register') }}"
-                            style="color: #ffffff; text-decoration: none; background-color: #00b84d; padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">@lang('Registration')</a>
+                            style="color: #ffffff; text-decoration: none; background-color: #0d47a1; padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 600;">@lang('Registration')</a>
                     </li>
                 @endguest
 
