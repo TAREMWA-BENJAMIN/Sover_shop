@@ -9,26 +9,14 @@
             <li class="cat-sidebar__item">
                 <a href="{{ route('products', ['category' => $cat->slug]) }}" class="cat-sidebar__link">
                     @php
-                        $catSlug = strtolower($cat->slug ?? $cat->name);
-                        $icon = 'las la-tag';
-                        if (str_contains($catSlug, 'humidifier')) $icon = 'las la-tint';
-                        elseif (str_contains($catSlug, 'perfume')) $icon = 'las la-spray-can';
-                        elseif (str_contains($catSlug, 'shoe')) $icon = 'las la-shoe-prints';
-                        elseif (str_contains($catSlug, 'bag')) $icon = 'las la-shopping-bag';
-                        elseif (str_contains($catSlug, 'watch')) $icon = 'las la-clock';
-                        elseif (str_contains($catSlug, 'cloth') || str_contains($catSlug, 'shirt') || str_contains($catSlug, 'apparel')) $icon = 'las la-tshirt';
-                        elseif (str_contains($catSlug, 'electronic') || str_contains($catSlug, 'computer')) $icon = 'las la-laptop';
-                        elseif (str_contains($catSlug, 'phone') || str_contains($catSlug, 'mobile')) $icon = 'las la-mobile-alt';
-                        elseif (str_contains($catSlug, 'beauty') || str_contains($catSlug, 'cosmetic')) $icon = 'las la-magic';
-                        elseif (str_contains($catSlug, 'health') || str_contains($catSlug, 'medical')) $icon = 'las la-heartbeat';
-                        elseif (str_contains($catSlug, 'home') || str_contains($catSlug, 'furniture')) $icon = 'las la-home';
-                        elseif (str_contains($catSlug, 'toy') || str_contains($catSlug, 'kid') || str_contains($catSlug, 'baby')) $icon = 'las la-child';
-                        elseif (str_contains($catSlug, 'sport') || str_contains($catSlug, 'fitness')) $icon = 'las la-dumbbell';
-                        elseif (str_contains($catSlug, 'book') || str_contains($catSlug, 'stationery')) $icon = 'las la-book';
-                        elseif (str_contains($catSlug, 'car') || str_contains($catSlug, 'vehicle') || str_contains($catSlug, 'auto')) $icon = 'las la-car';
+                        $firstProduct = $cat->products->first();
                     @endphp
                     <div class="cat-sidebar__icon">
-                        <i class="{{ $icon }}"></i>
+                        @if($firstProduct)
+                            <img src="{{ getImage(getFilePath('product') . '/' . $firstProduct->image, getFileSize('product')) }}" alt="{{ __($cat->name) }}">
+                        @else
+                            <i class="las la-tag"></i>
+                        @endif
                     </div>
                     <div class="cat-sidebar__info">
                         <span class="cat-sidebar__name">{{ __($cat->name) }}</span>
@@ -141,6 +129,13 @@
     flex-shrink: 0;
     font-size: 16px;
     color: #e8041b;
+    overflow: hidden;
+}
+
+.cat-sidebar__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .cat-sidebar__info {
