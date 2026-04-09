@@ -255,30 +255,27 @@
 }
 
 .cat-flyout__img {
-    width: 100%;
-    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 6px;
     overflow: hidden;
     background: #f8f8f8;
-    display: none;
+    margin-right: 12px;
 }
 
 .cat-flyout__img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transitio0;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center
 }
 
 .cat-flyout__product-info {
-    padding: 12px 10px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .cat-flyout__product-name {

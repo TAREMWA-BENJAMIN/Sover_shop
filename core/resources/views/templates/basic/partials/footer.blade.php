@@ -128,3 +128,16 @@
      });
  </script>
 @endpush
+
+@push('style')
+ <style>
+     .footer-social-links li a {
+         background-color: #0d47a1 !important;
+         border-color: #0d47a1 !important;
+     }
+     .footer-social-links li a:hover {
+         background-color: #0a3a85 !important;
+         border-color: #0a3a85 !important;
+     }
+ </style>
+ @endpush
