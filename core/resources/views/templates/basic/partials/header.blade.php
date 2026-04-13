@@ -62,6 +62,15 @@
                     </li>
                 @endguest
 
+                <!-- Cart Icon -->
+                <li style="display: flex; align-items: center; margin-left: 10px;">
+                    <a href="{{ url('/user/order/history') }}"
+                        title="Order History"
+                        style="color: #ffffff; text-decoration: none; position: relative; display: flex; align-items: center; padding: 6px 10px;">
+                        <i class="las la-shopping-cart" style="font-size: 26px;"></i>
+                    </a>
+                </li>
+
             </ul> <!-- Menu End -->
 
             <div class="header-search-bar d-md-none @if (request()->search) show @endif">
