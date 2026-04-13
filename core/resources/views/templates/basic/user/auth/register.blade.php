@@ -62,8 +62,6 @@
                         <input type="password" class="form-control form--control" name="password_confirmation" required>
                     </div>
 
-                    <x-captcha />
-
                     @if (gs('agree'))
                         @php
                             $policyPages = getContent('policy_pages.element', false, orderById: true);

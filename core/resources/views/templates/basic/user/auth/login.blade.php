@@ -13,7 +13,7 @@
             </div>
             <h3 class="title mb-5">@lang('Login to your Account')</h3>
             @include($activeTemplate . 'partials.social_login')
-            <form action="{{ route('user.login') }}" method="post" class="account-form mt-2 verify-gcaptcha">
+            <form action="{{ route('user.login') }}" method="post" class="account-form mt-2">
                 @csrf
                 <div class="form--group">
                     <input type="text" name="username" value="{{ old('username') }}" placeholder="@lang('Username or Email')" class="form--control" required>
@@ -21,7 +21,6 @@
                 <div class="form--group">
                     <input id="password" type="password" placeholder="@lang('Password')" class="form--control" name="password" required>
                 </div>
-                <x-captcha />
                 <div class="form-group form-check mt-2">
                     <div class="d-flex align-items-center gap-2 justify-content-between">
                         <div>
