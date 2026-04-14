@@ -52,7 +52,6 @@ class RegisterController extends Controller
             'lastname'  => 'required',
             'email'     => 'required|string|email|unique:users',
             'password'  => ['required', 'confirmed', $passwordValidation],
-            'captcha'   => 'sometimes|required',
             'agree'     => $agree
         ],[
             'firstname.required'=>'The first name field is required',
@@ -71,11 +70,6 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         $request->session()->regenerateToken();
-
-        if (!verifyCaptcha()) {
-            $notify[] = ['error', 'Invalid captcha provided'];
-            return back()->withNotify($notify);
-        }
 
 
 
