@@ -44,9 +44,7 @@ class AuthorizationController extends Controller
             $user->ver_code = verificationCode(6);
             $user->ver_code_send_at = Carbon::now();
             $user->save();
-            notify($user, $notifyTemplate, [
-                'code' => $user->ver_code
-            ],[$type]);
+            \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\VerificationMail($user->ver_code));
         }
 
         return view('Template::user.auth.authorization.'.$type, compact('user', 'pageTitle'));
@@ -75,9 +73,13 @@ class AuthorizationController extends Controller
             $notifyTemplate = 'SVER_CODE';
         }
 
-        notify($user, $notifyTemplate, [
-            'code' => $user->ver_code
-        ],[$type]);
+        if ($type == 'email') {
+            \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\VerificationMail($user->ver_code));
+        } else {
+            notify($user, $notifyTemplate, [
+                'code' => $user->ver_code
+            ],[$type]);
+        }
 
         $notify[] = ['success', 'Verification code sent successfully'];
         return back()->withNotify($notify);
