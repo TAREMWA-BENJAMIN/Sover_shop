@@ -1020,7 +1020,7 @@ i {
 .header-bottom {
   background: #e8041b;
   border-bottom: 1px solid rgba(31, 31, 31, 0.08);
-  padding: 20px 15px;
+  padding: 10px 15px;
   margin-left: -100vw;
   margin-right: -100vw;
   padding-left: calc(100vw - 50%);
@@ -1030,13 +1030,13 @@ i {
 
 @media (max-width: 1199px) {
   .header-bottom {
-    padding: 20px 15px;
+    padding: 10px 15px;
   }
 }
 
 @media (max-width: 991px) {
   .header-bottom {
-    padding: 15px;
+    padding: 10px 15px;
   }
 }
 

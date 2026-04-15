@@ -28,6 +28,13 @@
                     </span>
                 </li>
 
+                <!-- Logo on the left -->
+                <li style="display: flex; align-items: center; padding-left: 15px; margin-right: 15px;">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('assets/images/logo_icon/logo11.png') }}" alt="Logo" style="max-height: 40px; border-radius: 4px;">
+                    </a>
+                </li>
+
                 <li class="d-none d-md-block" style="padding-left: 15px;">
                     <a href="{{ route('home') }}" style="color: #ffffff; font-weight: 600; text-decoration: none; font-size: 15px;">@lang('Home')</a>
                 </li>
@@ -70,7 +77,6 @@
                         <i class="las la-shopping-cart" style="font-size: 26px;"></i>
                     </a>
                 </li>
-
             </ul> <!-- Menu End -->
 
             <div class="header-search-bar d-md-none @if (request()->search) show @endif">
